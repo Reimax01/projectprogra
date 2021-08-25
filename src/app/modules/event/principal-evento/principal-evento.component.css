@@ -1,0 +1,98 @@
+/*
+@charset "utf-8";
+.contenedor {
+    margin-left: 12%;
+}
+.vista-previa{
+	width: 153%;
+	margin-left: 70%;
+	padding-left: 2%;
+	border: 1px solid #e6ecf5;
+	padding-top:1%;
+}
+.titulo-registro{
+  font-size: 1.5rem;
+  text-align: center;
+}
+.titulo-registro,
+.titulo-vistap {
+  background: #3f4257;
+  color: white;
+}
+.titulo-vistap{
+  font-size: 1.5rem;
+  margin-top: 3%;
+  text-align: center;
+}
+.contenido-form {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.barra_lateral {
+	    float: left;
+   border: 1px solid #e6ecf5;
+	margin-right: 2%;
+	width: 67%;
+	height: 585px;
+}
+.wraper {
+    margin-left: 12%;
+
+}
+.form-control {
+	margin:2%;
+}
+.etiqueta {
+	margin:2%;
+	display: block;
+	font-weight: bold;
+}
+.encabezado {
+	border: 1px solid #e6ecf5;
+	width: 90%;
+	margin-right: 4%;
+	margin-left: 2%;
+}
+.barra-estado li{
+	display: inline-block;
+	margin-right: 2%;
+}
+.lista-i{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.lista-i li{
+	display: inline-block;
+	margin-right: 2%;
+}
+.contador{
+	color: red;
+	padding-left: 50%;
+	padding-bottom: 25%;
+}
+.detalle,.lista-invitados{
+	border: 1px solid #e6ecf5;
+	width: 86%;
+	margin-left: 2%;
+	margin-top: 2.5%;
+	padding: 2%;
+}
+.lista-invitados{
+    margin-bottom: 2%;
+}
+.btn-crear,.btn{
+	border-radius: 3px;
+	background: #0B173B;
+	border: 1px solid #e6ecf5;
+	text-align: center;
+	color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 30px;
+	font-size: 1.2rem;
+}
+*/

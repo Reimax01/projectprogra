@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <img src="../../../../assets/images/logoI.png" style="width: 218px" />
+    </div>
+    <div class="col-md-6">
+      <div class="register-login">
+        <h1>Red Social</h1>
+        <form [formGroup]="form" (ngSubmit)="loginUser($event)" class="form-group ">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <input type="email" formControlName="user" (change)="onChangeInputUser($event)" placeholder="Correo Electronico" class="form-control"
+                       style="width: 100%">
+                <div *ngIf="userField.errors && userField.dirty" class="text-danger">
+                  <p *ngIf="userField.hasError('required')"> El campo es requerido</p>
+                  <p *ngIf="userField.hasError('email')"> El correo introducido es incorrecto  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <input type="password" name="password" formControlName="password" placeholder="Ingrese contraseña"
+                       class="form-control"
+                       style="width: 100%" required="true">
+                <div *ngIf="passwordField.errors && passwordField.dirty" class="text-danger">
+                  <p *ngIf="passwordField.hasError('required')">El campo contraseña es requerido.</p>
+                  <p *ngIf="passwordField.hasError('minlength')">Mínimo 8 caracteres.</p>
+                  <p *ngIf="passwordField.hasError('maxlength')" >Máximo 15 caracteres.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-primary" [disabled]="form.invalid"
+                        style="width: 100%" type="submit">Iniciar Sesión </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12" style="text-align: center">
+                <p> <a href="#">¿Olvidaste tu contraseña?</a>  </p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="enlace-login">
+          <p>¿No tienes una cuenta? <a [routerLink]="['/register-user']">Registrate</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
+

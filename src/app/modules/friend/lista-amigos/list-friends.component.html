@@ -1,0 +1,14 @@
+<div class="contenedor">
+  <h1 class="titulo">Amigos</h1>
+  <div class="row border-radius">
+    <div class="friend" *ngFor="let amigo of amigos">
+        <div class="friend_title">
+            <img src="{{amigo.imagen_usuario}}" alt="" />
+            <span><b>{{amigo.nom_usuario}}</b><br><p>4 Amigos en Común</p></span>
+            <button class="btn btn-info mr-2" (click)="eliminarAmigo(amigo.id_amigo)">Eliminar</button>
+            <button class="btn btn-info mr-2" (click)="bloquearAmigo(amigo.id_amigo)">{{verificarBloqueo(amigo.es_bloqueado)}}</button>
+            <button class="btn btn-info mr-2" (click)="seguirAmigo(amigo.id_amigo)">{{verificarSegidor(amigo.es_segido)}}</button>
+        </div>
+    </div>
+  </div>
+</div>

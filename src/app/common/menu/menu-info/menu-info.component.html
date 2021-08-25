@@ -1,0 +1,21 @@
+<div class="row shadow">
+  <div class="row_title">
+    <span>Eventos</span>
+  </div>
+  <div class="row_contain">
+    <app-invitacion-evento></app-invitacion-evento>
+  </div>
+</div>
+<div class="row shadow">
+  <div class="row_title">
+      <span>Actividades</span>
+  </div>
+  <div class="row_contain" *ngFor="let notificacion of notificaciones">
+      <img src="{{notificacion.imagen_usuario}}" alt="" />
+      <span>
+        <span class="fecha-notif">{{formato(notificacion.fecha_hora_notif)}}</span>
+        {{notificacion.contenido_notif}}
+      </span>
+  </div>
+</div>
+

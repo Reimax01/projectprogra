@@ -1,0 +1,98 @@
+<div id="content-menu" class="content-menu"></div>
+
+<div class="container-chat">
+  <div class="container-usser-list">
+    <div class="title-chat">
+      <div class="content-img-profile">
+        <img
+          class="img-profile"
+          src="{{ usuario.imagen_usuario }}"
+          id="img-profile-me"
+          alt=""
+        />
+      </div>
+      <span id="me">
+        {{ usuario.nom_usuario }}
+      </span>
+    </div>
+    <div class="content-users-list">
+      <ul class="list" id="users-list">
+        <li class="item-user" *ngFor="let usuario of usuarios">
+          <div class="content-img-profile">
+            <img
+              class="img-profile"
+              src="{{ usuario.imagen_usuario }}"
+              alt=""
+            />
+          </div>
+          <div class="content-user-name" (click)="crearchat(usuario)">
+            <span>{{ usuario.nom_usuario }}</span>
+            <span id="" class="isWriting no-show-writing"
+              >Esta escribiendo</span
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-messages">
+    <h1 class="nombre-chat">
+      {{ nomb_chat }}
+    </h1>
+    <div class="messages" id="messages-content">
+      <ul id="mensajes">
+        <li *ngFor="let mensaje of mensajes">
+
+          <p class="chat"*ngIf="(verificartexto(mensaje.ruta_archivo))">
+            <span class="user">{{ mensaje.nom_usuario }}</span
+            ><br />{{mensaje.mensaje}}
+          </p>
+          <p class="chat" *ngIf="(verificarimagen(mensaje.ruta_archivo))">
+            <span class="user">{{ mensaje.nom_usuario }}</span
+            ><br /><img src="{{mensaje.ruta_archivo}}"height="140px" alt="">
+          </p>
+          <p class="chat" *ngIf="verificararchivo(mensaje.ruta_archivo)">
+            <span class="user">{{ mensaje.nom_usuario }}</span
+            ><br /><a href="{{mensaje.ruta_archivo}}"><img src="../../../../assets/chat-img/docx.svg" height="30px" alt=""></a>
+          </p>
+          <p class="chat" *ngIf="verificararchivopdf(mensaje.ruta_archivo)">
+            <span class="user">{{ mensaje.nom_usuario }}</span
+            ><br /><a href="{{mensaje.ruta_archivo}}"target="_blank"><img src="../../../../assets/chat-img/pdf.svg" height="30px" alt=""></a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="content-inputs">
+      <input
+        type="file"
+        name="file"
+        id="file-message"
+        (change)="enviar_imagen($event)"
+        class="input-file"
+      />
+      <label for="file-message" class="btn-file"
+        ><img src="../../../../assets/chat-img/picture.svg" alt=""
+      /></label>
+      <input
+        type="file"
+        name="file-attached"
+        id="file-attached"
+        (change)="enviar_archivo($event)"
+        class="input-file"
+      />
+      <label for="file-attached" class="btn-file"
+        ><img src="../../../../assets/chat-img/fichero.svg" alt=""
+      /></label>
+      <textarea
+        name=""
+        id="message"
+        [(ngModel)]="mensaje.mensaje"
+        placeholder="Escriba un mensaje..."
+        class="input-message"
+      ></textarea>
+      <button id="btnSend" class="btn btn-send" (click)="enviar()">
+        <img src="../../../../assets/chat-img/paper-plane.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

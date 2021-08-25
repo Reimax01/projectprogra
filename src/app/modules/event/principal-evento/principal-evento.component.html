@@ -1,0 +1,107 @@
+
+<div class="row" style="padding-bottom: 35px">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-center">
+                <b>Detalles del evento</b>
+            </div>
+            <div class="card-body">
+                <form class= "" action="">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="etiqueta">Nombre del evento</label>
+                            <input type="text" class="form-control"  name="nombre_evento" [(ngModel)]="evento.nombre_evento">
+                        </div>
+                        <div class="form-group">
+                            <label class="etiqueta">Fecha y hora del evento</label>
+                            <input type="datetime-local" class="form-control" name="fecha_hora_evento" [(ngModel)]="evento.fecha_hora_evento" >
+                        </div>
+                        <div class="form-group">
+                            <label class="etiqueta">Fecha y hora de finalización</label>
+                            <input type="datetime-local" class="form-control" name="fecha_finalizacion"  [(ngModel)]="evento.fecha_finalizacion">
+                        </div>
+                        <div class="form-group">
+                            <label class="etiqueta">Lugar del Evento</label>
+                            <input type="text" class="form-control" name="lugar_evento"  [(ngModel)]="evento.lugar_evento">
+                        </div>
+                        <div class="form-group">
+                            <label class="etiqueta">Ingrese un logo</label>
+                            <input type="file" class=""  (change)="onFileChange($event)"  accept="image/*" >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-success" (click)="guardarEvento()">
+                                <span class="fa fa-save"></span>
+                                Crear Evento
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <b>Vista previa del evento</b>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12"><h3>{{evento.nombre_evento}}</h3></div>
+                    <div class="col-md-12"><h2>{{formato(evento.fecha_hora_evento)}}</h2></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12"><p>Te invito {{ usuario.nom_usuario }}</p></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <button type="button" class="btn btn-info">Asitiré</button>
+                            </div>
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <button type="button" class="btn btn-info">Talvez asista</button>
+                            </div>
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <button type="button" class="btn btn-info">No Asitiré</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row">
+                    <h3>Detalle</h3>
+                    <div class="col-md-12">
+                        <p>1 persona asistirá, incluido {{ usuario.nom_usuario }}</p>
+                        <p>Desde el {{formato(evento.fecha_hora_evento)}}</p>
+                        <p>hasta el {{formato(evento.fecha_finalizacion)}}</p>
+                        <p>Organizado por {{ usuario.nom_usuario }}</p>
+                        <p><span style="font-weight: bold;">Lugar: </span> {{evento.lugar_evento}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <h3>Lista Invitados</h3>
+                    <div class="col-md-4">
+                        <span class="contador">1</span><br>
+                        <span>ASISTIRÁN</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="contador">0</span><br>
+                        <span>TAL VEZ ASISTAN</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="contador">1</span><br>
+                        <span>INVITADOS</span>
+                    </div>
+                </div>
+                <hr>
+                <p>{{ usuario.nom_usuario }}</p>
+                <p>Organizador</p>
+
+            </div>
+        </div>
+    </div>
+</div>

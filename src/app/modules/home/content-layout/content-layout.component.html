@@ -1,0 +1,57 @@
+<app-menu-principal></app-menu-principal>
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <ng-container *ngTemplateOutlet="contentLeft"></ng-container>
+      </div>
+      <div class="col-md-8">
+        <ng-container *ngTemplateOutlet="contentRight"></ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #contentLeft>
+  <div class="rowfixed"></div>
+  <div class="">
+    <div class="left_row_profile">
+      <img class="portada" src="/../../../assets/images/pp_1.jpg" />
+      <div class="left_row_profile">
+        <img class="profile_pic" *ngIf="usuario.imagen_usuario == ''" src="/../../../assets/images/user.jpg" alt="" /> <br>
+        <img class="profile_pic" *ngIf="usuario.imagen_usuario !== ''"src="{{usuario.imagen_usuario}}" alt="" /> <br>
+        <span>
+          <span  class="nom-user">{{usuario.nom_usuario}}</span><br>
+          <span class="full-name">{{usuario.nombres_user}} {{usuario.apellidos_user}}</span>
+        </span>
+      </div>
+    </div>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+</ng-template>
+
+<ng-template #contentRight>
+  <router-outlet></router-outlet>
+</ng-template>
+
+<!--<div class="all">
+  <div class="rowfixed"></div>
+  <div class="left_row">
+    <div class="left_row_profile">
+      <img id="portada" src="/../../../assets/images/portada.jpg" />
+      <div class="left_row_profile">
+        <img id="profile_pic" *ngIf="usuario.imagen_usuario == ''" src="/../../../assets/images/user.jpg" alt="" /> <br>
+        <img id="profile_pic" *ngIf="usuario.imagen_usuario !== ''"src="{{usuario.imagen_usuario}}" alt="" /> <br>
+        <span>
+          <span  class="nom-user">{{usuario.nom_usuario}}</span><br>
+          <span class="full-name">{{usuario.nombres_user}} {{usuario.apellidos_user}}</span>
+        </span>
+      </div>
+    </div>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+  <router-outlet></router-outlet>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>-->
+  <!-- NavMobile -->
+  <!--<app-menu-movil></app-menu-movil>-->

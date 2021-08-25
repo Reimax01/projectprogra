@@ -1,0 +1,8 @@
+.contenedor{
+  margin-left: 12%;
+}
+.invitados li{
+	display: inline-block;
+	text-align: center;
+	margin-right: 2%;
+}

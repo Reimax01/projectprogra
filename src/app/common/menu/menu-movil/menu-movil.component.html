@@ -1,0 +1,80 @@
+<div class="mobilemenu">
+  <div class="mobilemenu_profile">
+    <img id="mobilemenu_portada" src="/../../../assets/images/portada.jpg" />
+    <div class="mobilemenu_profile">
+      <img id="mobilemenu_profile_pic" *ngIf="usuario.imagen_usuario == ''" src="/../../../assets/images/user.jpg" alt="" /> <br>
+      <img id="mobilemenu_profile_pic" *ngIf="usuario.imagen_usuario !== ''"src="{{usuario.imagen_usuario}}" alt="" /> <br>
+      <span>{{usuario.nom_usuario}}<br>
+      </span>
+    </div>
+    <div class="mobilemenu_menu">
+      <ul>
+        <li><a href="../../../../index.html" id="mobilemenu-selected"><img height="40px" src="/../../../assets/img/pagina-principal.png"></a></li>
+        <li *ngIf="esMovil == true">
+          <a class="image-upload">
+            <label for="file-input-pub">
+              <img height="40px" src="/../../../assets/img/imagen.png" alt=""
+                >
+            </label>
+            <input id="file-input-pub" type="file" (change)="onFileChangeP($event)" name="file" multiple
+              accept="video/*,image/*" />Publicar
+          </a>
+        </li>
+        <li><a (click)="ingresar()"><img height="40px" src="/../../../assets/img/perfil-del-usuario.png" alt="">Perfil</a></li>
+        <li><a  [routerLink]="['amigos']"><img height="40px" src="/../../../assets/img/seguidores.png" alt="">Amigos</a></li>
+        <li><a [routerLink]="['marketplace']"><img height="40px" src="/../../../assets/img/marketplace.png" alt="">Marketplace</a></li>
+        <li><a [routerLink]="['evento']"><img height="40px" src="/../../../assets/img/calendario.png" alt="">Eventos</a></li>
+        <li><a [routerLink]="['chat']"><img height="40px" src="/../../../assets/img/enviar-correo.png" alt="">Chats</a></li>
+        <li class="primarymenu"><img src="/../../../assets/img/explode.png" alt=""></li>
+      </ul>
+      <hr>
+      <ul>
+        <li><a href="#" (click)="cerrarSesion()">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Publicar -->
+<div id="pModal" class="modalContainer">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarModal('pModal')">×</span>
+    <br>
+    <button (click)="publicar()">Publicar</button>
+    <img src="{{ image }}" id="image-id" class="img-publicacion" alt="" *ngIf="tipoArchivo == 'imagen'">
+    <video src="{{ image }}" class="img-publicacion" controls *ngIf="tipoArchivo == 'video'"></video>
+    <div class="ctr-filt" *ngIf="tipoArchivo == 'imagen'">
+      <ul class="menu">
+        <li><a title="Enlace genérico" (click)="cambiarPestana('f')">Filtros</a></li>
+        <li><a title="Enlace genérico" (click)="cambiarPestana('e')">Editar</a></li>
+      </ul>
+      <div class="controles" *ngIf="tabAct=='e'">
+        <label for="brillo" class="control">Brillo {{brillo}}</label>
+        <input id="brillo" class="control" type="range" min="-5" max="5" step="0.01" value="0" (change)="valueBrillo()">
+        <label for="contrastre" class="control">Contraste</label>
+        <input id="contrastre" class="control" type="range" min="-5" max="5" step="0.01" value="0"
+          (change)="valueContrastre()">
+        <label for="saturacion" class="control">Saturacion</label>
+        <input id="saturacion" class="control" type="range" min="-5" max="5" step="0.01" (change)="valueContrastre()">
+      </div>
+      <div class="efectos" *ngIf="tabAct == 'f'">
+        <ul class="menu">
+          <li *ngFor="let filtro of filtros"><a (click)="aplicarFiltro(filtro.id_filtro)">{{filtro.nombre_filtro}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="publicarMultipleModal" class="modalContainer">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarModal('publicarMultipleModal')">×</span>
+    <div class="contenedor-botones">
+      <br>
+      <button (click)="publicar()">Publicar</button>
+      <div class="btnAdelante botones" (click)="adelante()">&#62;</div>
+      <div class="btnAtras botones" (click)="atras()">&#60;</div>
+      <img  src="{{archivos[contador]}}" id="image-id" class="img-publicacion" *ngIf="tipoArchivo == 'imagen'">
+      <video src="{{archivos[contador]}}" class="img-publicacion" controls *ngIf="tipoArchivo == 'video'"></video>
+    </div>
+  </div>
+</div>

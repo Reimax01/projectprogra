@@ -1,0 +1,47 @@
+<app-historias></app-historias>
+<div class="row border-radius" *ngFor="let publicacion of publicaciones">
+  <div class="feed">
+    <div class="feed_title">
+      <img *ngIf="publicacion.imagen_usuario == ''" src="../../assets/images/user-7.jpg" alt="" />
+      <img *ngIf="publicacion.imagen_usuario !== ''" src="{{publicacion.imagen_usuario}}" alt="" />
+      <span><b>{{publicacion.nom_usuario}}</b><a
+          [routerLink]="['/home/publicacion',publicacion.id_pub]">{{publicacion.cont_type}}</a><br>
+        <p>{{formato(publicacion.fecha_bub)}}</p>
+      </span>
+    </div>
+    <div class="feed_content">
+      <div class="menu">
+        <ul class="menu-publicacion">
+            <li><button  class="btnPublicacion-accion"(click)="eliminarPublicacion(publicacion.id_pub)"><img src="../../../../assets/img/ícono_eliminar.png" alt="" srcset=""></button></li>
+        </ul>
+      </div>
+      <div class="feed_content_image contenedor-botones"  *ngFor="let imagen of imagenes">
+          <img  src="{{imagen.contenido_mult}}" alt="" *ngIf="imagen.id_type == 1 && imagen.id_pub == publicacion.id_pub ">
+          <video *ngIf="imagen.id_type == 2  && imagen.id_pub == publicacion.id_pub" muted controls>
+            <source src="{{imagen.contenido_mult}}">
+          </video>
+      </div>
+    </div>
+    <div class="feed_footer">
+      <ul class="feed_footer_left">
+        <app-reaccion-pub [id_pub]="publicacion.id_pub" [id_usuario]="usuario.id_usuario" [nom_usuario]="usuario.nom_usuario"></app-reaccion-pub>
+      </ul>
+      <ul class="feed_footer_right">
+        <li><a href="feed.html" style="color:#515365;"></a></li>
+        <li class="hover-orange"><img src="/../../assets/img/coment.png" alt="">{{contarComentario(publicacion.id_pub)}} </li>
+      </ul>
+    </div>
+    <div class="comentarios">
+      <p>{{accion_comentario}}</p>
+      <div *ngFor="let comentario of comentarios">
+        <p *ngIf="comentario.id_pub == publicacion.id_pub">
+          <span class="usuario">{{comentario.nom_usuario}}</span>{{comentario.contenido_com}}
+          <span class="fecha">{{formato(comentario.fecha_hora_com)}}</span>
+        </p>
+      </div>
+      <textarea class="texto_comentario" name="" id="" cols="30" rows="1" placeholder="Escribe tu comentario ..."
+        (keypress)="notificarComentario()" (change)="comentar(publicacion.id_pub)"
+        [(ngModel)]="comentario.contenido_com"></textarea>
+    </div>
+  </div>
+</div>

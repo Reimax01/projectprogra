@@ -1,0 +1,91 @@
+<div class="historias">
+  <ul>
+    <li>
+      <div class="image-upload">
+        <label for="file-input-historia">
+          <img src="/../../../assets/img/publicar.png" alt="Click aquí para subir tu foto"
+            title="Click aquí para subir tu foto">
+        </label>
+        <input id="file-input-historia" type="file" (change)="onFileChange($event)" name="file" multiple
+          accept="image/*" />
+      </div>
+    </li>
+    <li *ngFor="let amigo of amigos">
+      <div class="historia_usuario">
+        <img src="{{amigo.imagen_usuario}}" alt="" (click)="abrirHistoria(amigo.id_amigo)" /> <br>
+        {{amigo.nom_usuario}}
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div bsModal #mostarHistoriaModal="bs-modal" [config]="{backdrop: 'static',keyboard: false}" class="modal fade"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-mg" role="document"><!--modal-dialog-centered-->
+    <div class="modal-content">
+
+      <div class="modal-header" >
+        <h4 class="modal-title pull-left">Mostrar historia</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal(mostarHistoriaModal)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row border-radius">
+              <div class="feed">
+                <div class="feed_title">
+                  <span><b>{{historia.nom_usuario}}</b>
+            </span>
+                </div>
+                <div class="feed_content">
+                  <div class="feed_content_image contenedor-botones">
+                    <img src="{{historia.imagen_historia}}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div bsModal #modalPublicar="bs-modal" [config]="{backdrop: 'static',keyboard: false}" class="modal fade"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-mg" role="document"><!--modal-dialog-centered-->
+    <div class="modal-content">
+
+      <div class="modal-header" >
+        <h4 class="modal-title pull-left">Publicacion</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal(modalPublicar)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="{{image}}" class="img-publicacion">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer" ><!--style="justify-content: center"-->
+        <div class="float-center my-1 text-center" style="text-align: center">
+          <button type="button" class="btn btn-success btn-md" (click)="publicar()">
+            <em class="fa fa-check"></em> Publicar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

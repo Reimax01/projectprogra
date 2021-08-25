@@ -1,0 +1,22 @@
+<app-menu-principal></app-menu-principal>
+<div class="all">
+  <div class="rowfixed"></div>
+  <div class="left_row">
+    <div class="left_row_profile">
+      <img id="portada" src="/../../../assets/images/portada.jpg" />
+      <div class="left_row_profile">
+        <img id="profile_pic" src="/../../../assets/images/user.jpg" />
+        <span>
+          <span  class="nom-user">{{usuario.nom_usuario}}</span><br>
+          <span class="full-name">{{usuario.nombres_user}} {{usuario.apellidos_user}}</span>
+          <p class="followers">150k seguidores / 50 seguidos</p>
+        </span>
+      </div>
+    </div>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+  <router-outlet></router-outlet>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+  <!-- NavMobile -->
+  <app-menu-movil></app-menu-movil>
+

@@ -1,0 +1,29 @@
+<div class="right_row">
+  <div class="row border-radius">
+      <div class="settings shadow">
+          <div class="settings_title">
+              <h3>Información Personal</h3>
+          </div>
+          <div class="settings_content">
+              <form>
+                  <div class="pi-input pi-input-lgg">
+                      <span>Contraseña Actual</span>
+                      <input type="password" name="contraseniaAc" [(ngModel)]="contraseniaAct" />
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Nueva Contraseña</span>
+                      <input type="password" placeholder="Escriba nueva contraseña.." [(ngModel)]="newPassword.contrasena_usuario"/>
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Confirmar Nueva Contraseña</span>
+                      <input type="password" placeholder="Confima nueva contraseña.." [(ngModel)]="newPassword.confirm_contrasena_usuario"/>
+                  </div>
+                  <button>Cambiar Contraseña Ahora!</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="suggestions_row">
+  <app-menu-configuracion></app-menu-configuracion>
+</div>

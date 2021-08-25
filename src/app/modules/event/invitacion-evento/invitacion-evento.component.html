@@ -1,0 +1,70 @@
+<h2>Eventos Realizados</h2>
+<div class="detalle" *ngFor="let evento of myEventos">
+  <h3 (click)="ingresarEvento(evento.id_evento)">{{evento.nombre_evento}}</h3>
+  <p>1 persona asistirá, incluido {{evento.nom_usuario}} </p>
+  <p>Desde el {{formato(evento.fecha_hora_evento)}}</p>
+  <p>hasta el {{formato(evento.fecha_finalizacion)}}</p>
+  <p>Organizado por {{evento.nom_usuario}} </p>
+  <p><span style="font-weight: bold;">Lugar: {{evento.lugar_evento}}</span></p>
+  <div class="encabezado">
+    <ul class="barra-estado">
+      <li>
+        <input class="btn" type="button" (click)="invitar(evento.nombre_evento, evento.id_evento)" value="Invitar">
+      </li>
+    </ul>
+  </div>
+  <div id="invitacionModal" class="modalContainer">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal()">×</span>
+      <br>
+      <h1 class="titulo-modal">Invitar</h1>
+      <h2>{{nombre_evento}}</h2>
+      <ul class="seleccion">
+        <li *ngFor="let usuario of usuarios"> {{usuario.nom_usuario}}
+          <button (click)="seleccionarUsuario(usuario.id_usuario)">Seleccionar</button></li>
+      </ul>
+      <ul class="pie_modal">
+        <li> <button class="boton-modal" (click)="cerrarModal()">Cancelar</button></li>
+        <li><button class="boton-modal" (click)="enviar()">Enviar Invitación</button></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h2>Invitaciones a eventos</h2>
+<div class="detalle" *ngFor="let evento of eventos">
+  <h3 (click)="ingresarEvento(evento.id_evento)">{{evento.nombre_evento}}</h3>
+  <p>1 persona asistirá, incluido {{evento.nom_usuario}} </p>
+  <p>Desde el {{formato(evento.fecha_hora_evento)}}</p>
+  <p>hasta el {{formato(evento.fecha_finalizacion)}}</p>
+  <p>Organizado por {{evento.nom_usuario}} </p>
+  <p><span style="font-weight: bold;">Lugar: {{evento.lugar_evento}}</span></p>
+  <div class="encabezado">
+    <ul class="barra-estado">
+      <li>
+        <input class="btn"type="button" value="Asistiré" (click)="cambiarEvento('asistir')">
+      </li>
+      <li>
+        <input class="btn"type="button" value="Tal vez asista" (click)="cambiarEvento('talvez asista')">
+      </li>
+      <li>
+        <input class="btn"type="button" value="No asistiré" (click)="cambiarEvento('no asistire')">
+      </li>
+    </ul>
+  </div>
+  <div id="invitacionModal" class="modalContainer">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal()">×</span>
+      <br>
+      <h1 class="titulo-modal">Invitar</h1>
+      <h2>{{nombre_evento}}</h2>
+      <ul class="seleccion">
+        <li *ngFor="let usuario of usuarios"> {{usuario.nom_usuario}}
+          <button class="btn"(click)="seleccionarUsuario(usuario.id_usuario)">Seleccionar</button></li>
+      </ul>
+      <ul class="pie_modal">
+        <li> <input type="button" class="boton-invitacion" (click)="cerrarModal()">Cancelar></li>
+        <li><input type = "button"class="boton-invitacion" (click)="enviar()">Enviar Invitación></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<!-- Main Container -->
+<!--<div class="container">
+  &lt;!&ndash; Header &ndash;&gt;
+  <header class="header">
+    <h4 class="logo">Productos</h4>
+    <button class="button" [routerLink]="['crear']">Añadir </button>
+  </header>
+  &lt;!&ndash; Stats Gallery Section &ndash;&gt;
+  <div class="gallery">
+    <div class="thumbnail" *ngFor="let product-form of productos">
+      <h4 class="titulovistpre">{{product-form.nombre_producto}}</h4>
+      <p class="precio">${{product-form.precio_product}}</p>
+		<a ><img src="{{product-form.imagen_product}}" alt="" width="2000" class="imagen-pro"/></a>
+      <p class="desc">
+        {{product-form.descripcion_producto}}
+      </p>
+    </div>
+	</div>
+</div>-->
+<!-- Main Container Ends -->
+<div class="row">
+  <div class="col-md-12" style="padding-bottom: 35px">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-center" >Productos</div>
+          <div class="col-md-4 text-right">
+            <a class="btn btn-success" [routerLink]="['crear']" title="Agregar producto">
+              <span class="fa fa-plus"></span> Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let producto of productos">
+            <app-product [producto]="producto"></app-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

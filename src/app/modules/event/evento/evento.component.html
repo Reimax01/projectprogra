@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <img src="{{evento.logo}}" width="620" height="356" alt=""/>
+  <div class="encabezado">
+    <h2>{{formato(evento.fecha_hora_evento)}}</h2>
+    <h1>{{evento.nombre_evento}}</h1>
+    <h2>{{evento.lugar_evento}}</h2>
+  </div>
+  <div class="detalle">
+    <h2>Desde {{formato(evento.fecha_hora_evento)}}</h2>
+    <h2> hasta {{formato(evento.fecha_finalizacion)}}</h2>
+    <h2>{{organizador.nom_usuario}}</h2>
+    <h2>{{evento.lugar_evento}}</h2>
+  </div>
+  <div class="estadistica">
+    <h2>Estadisticas invitados</h2>
+    <ul class="invitados">
+      <li><span>{{estadisticas.asistire}}</span><br>
+        <span>Asistiran</span>
+      </li>
+      <li><span>{{estadisticas.talvez_asista}}</span><br>
+        <span>tal vez asistan</span>
+      </li>
+      <li><span>{{estadisticas.no_asistire}}</span><br>
+        <span>No asistiran</span>
+      </li>
+    </ul>
+  </div>
+</div>

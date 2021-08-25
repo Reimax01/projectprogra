@@ -1,0 +1,202 @@
+<!--<main class="contenedor">
+  <article class="principal">
+    <div class="img-presentacion"><img src="../../../../assets/images/logoI.png" style="width: 218px"/></div>
+    <div class="register-user">
+      <h1>
+        Red Social
+      </h1>
+      <h2>
+        Regístrate para ver fotos y videos de tus amigos.
+      </h2>
+      <form class="grupo-formulario" (ngSubmit)="registrarse()" #f="ngForm">
+        <input
+                type="email" name="email" placeholder="Correo Electronico"
+                [(ngModel)]="usuario.email_user" required
+                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                title="ejemplo@dominio.com">
+        <input
+                type="text" name="nombres" placeholder="Nombres"
+                [(ngModel)]="usuario.nombres_user" required pattern="^[A-Za-zÁÉÍÓÚñáéíóúÑ ]+$"
+                title="Solo letras.">
+        <input
+                type="text" name="apellidos" placeholder="Apellidos"
+                [(ngModel)]="usuario.apellidos_user" required pattern="^[A-Za-zÁÉÍÓÚñáéíóúÑ ]+$"
+                title="Solo letras.">
+        <input
+                type="date" name="fecha_nacimiento"
+                [(ngModel)]="usuario.fecha_nac" required
+                title="Ingrese una fecha válida.">
+        <span class="label danger"></span>
+        <p style="color:rgb(247, 131, 131);">{{ alertaEdad }}</p>
+        <input
+                type="text" name="username" placeholder="Nombre de usuario"
+                [(ngModel)]="usuario.nom_usuario" required pattern="^[A-Za-z0-9_.!-]{3,16}$"
+                title="Admite letras, números y los simbolos '_, ., ! y -' y sin tildes.">
+        <input
+                type="password" name="contrasena" placeholder="Ingrese contraseña"
+                [(ngModel)]="usuario.contrasena_usuario" required
+                pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$"
+                title="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.">
+        <label for="">Genero</label>
+        <select name="genero" [(ngModel)]="usuario.id_genero" required>
+          <option select disabled value="0">Seleccione un género</option>
+          <option *ngFor="let genero of generos" [value]="genero.id_genero">{{genero.nombre_genero}}</option>
+        </select>
+        <p style="color:red;">{{ alertaGenero }}</p>
+        <button type="submit" [disabled]="f.invalid">Registarse</button>
+      </form>
+      <p>Al registrarte, aceptas nuestras Condiciones, la Política de datos y la Política de cookies.</p>
+    </div>
+    <div class="enlace-login">
+      <p>¿Tienes una cuenta? <a [routerLink]="['/login']">Inicia sesión</a></p>
+    </div>
+  </article>
+  <div id="cambiarImagenModal" class="modalContainer">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal('cambiarImagenModal')">×</span>
+      <div class="contenedor-botones">
+        <br>
+        <button (click)="cambiarImagen()">Guardar</button>
+        <input id="file-input" type="file" (change)="onFileChange($event)" name="file" accept="image/*"/>
+        <img src="{{image}" id="image-id" class="img-publicacion">
+      </div>
+    </div>
+  </div>
+</main>-->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../../../../assets/images/logoI.png" style="width: 218px"/>
+    </div>
+    <div class="col-md-6">
+      <div class="register-login">
+        <h1>Red Social</h1>
+        <h2>Regístrate para ver fotos y videos de tus amigos.</h2>
+        <form class="form-group" [formGroup]="form" (ngSubmit)="onRegister($event)">
+          <div class="row">
+            <div class="col-md-12 py-2">
+              <input  type="email" formControlName="email" placeholder="Correo Electronico" class="form-control"
+                      pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                      title="ejemplo@dominio.com">
+              <div *ngIf="emailField.errors && emailField.dirty" class="text-danger">
+                <p *ngIf="emailField.hasError('required')"> El campo es requerido</p>
+                <p *ngIf="emailField.hasError('email')"> El correo introducido es incorrecto  </p>
+              </div>
+            </div>
+            <div class="col-md-12 py-2">
+              <input  type="text" formControlName="firstName" placeholder="Nombres" class="form-control"
+                      pattern="^[A-Za-zÁÉÍÓÚñáéíóúÑ ]+$" title="Solo letras.">
+              <div *ngIf="firstNameField.errors && firstNameField.dirty" class="text-danger">
+                <p *ngIf="firstNameField.hasError('required')"> El campo es requerido</p>
+              </div>
+            </div>
+            <div class="col-md-12 py-2">
+              <input  type="text" name="apellidos" formControlName="lastName" placeholder="Apellidos" class="form-control"
+                      pattern="^[A-Za-zÁÉÍÓÚñáéíóúÑ ]+$"  title="Solo letras.">
+              <div *ngIf="lastNameField.errors && lastNameField.dirty" class="text-danger">
+                <p *ngIf="lastNameField.hasError('required')"> El campo es requerido</p>
+              </div>
+            </div>
+            <div class="col-md-12 py-2">
+              <input  type="date" formControlName="date" class="form-control" title="Ingrese una fecha válida.">
+              <div *ngIf="dateField.errors && dateField.dirty" class="text-danger">
+                <p *ngIf="dateField.hasError('required')"> El campo es requerido</p>
+              </div>
+            </div>
+            <span class="label danger"></span>
+            <p class="text-danger"> {{ alertaEdad }}</p>
+            <div class="col-md-12 py-2">
+              <input  type="text" formControlName="user" placeholder="Nombre de usuario" class="form-control"
+                      pattern="^[A-Za-z0-9_.!-]{3,16}$" title="Admite letras, números y los simbolos '_, ., ! y -' y sin tildes.">
+              <div *ngIf="userField.errors && userField.dirty" class="text-danger">
+                <p *ngIf="userField.hasError('required')"> El campo es requerido</p>
+                <p *ngIf="userField.hasError('pattern')"> Admite letras, números y los simbolos '_, ., ! y -' y sin tildes.</p>
+              </div>
+            </div>
+            <div class="col-md-12 py-2">
+              <input  type="password" formControlName="password" placeholder="Ingrese contraseña" class="form-control"
+                      pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,15}$"
+                      title="La contraseña debe tener al entre 8 y 15 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.">
+              <div *ngIf="passwordField.errors && passwordField.dirty" class="text-danger">
+                <p *ngIf="passwordField.hasError('required')"> El campo es requerido</p>
+                <p *ngIf="passwordField.hasError('minlength')">Mínimo 8 caracteres.</p>
+                <p *ngIf="passwordField.hasError('maxlength')" >Máximo 15 caracteres.</p>
+                <p *ngIf="passwordField.hasError('pattern')"> Debe tener al menos un d&iacute;gito, una may&uacute;scula y un caracter no alfanum&eacute;rico.</p>
+              </div>
+            </div>
+            <div class="col-md-12 py-2">
+              <select formControlName="gender" class="form-control" [(ngModel)]="user.id_genero" required>
+                <option select disabled value="0">Seleccione un género</option>
+                <option *ngFor="let genero of generos" [value]="genero.id_genero">{{genero.nombre_genero}}</option>
+              </select>
+              <div *ngIf="genderField.errors && genderField.dirty" class="text-danger">
+                <p *ngIf="genderField.hasError('required')"> El campo es requerido</p>
+              </div>
+            </div>
+            <p class="text-danger">{{ alertaGenero }}</p>
+            <div class="col-md-12 py-2">
+              <button class="btn btn-primary" style="width: 100%" type="submit" [disabled]="form.invalid">Registarse</button>
+            </div>
+          </div>
+        </form>
+        <p style="padding-left: 25px; padding-right: 25px; text-align: center; font-size: 15px">Al registrarte, aceptas nuestras Condiciones, la Política de datos y la Política de cookies.</p>
+        <div class="enlace-login">
+          <p>¿Tienes una cuenta? <a [routerLink]="['/login']">Inicia sesión</a></p>
+        </div>
+        <!--<button class="btn btn-danger" (click)="openModalFileImage()">Open modal</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cambiarImagenModal" class="modalContainer">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('cambiarImagenModal')">×</span>
+    <div class="contenedor-botones">
+      <br>
+    </div>
+  </div>
+</div>
+
+<div bsModal #modalFileImage="bs-modal" [config]="{backdrop: 'static',keyboard: false}" class="modal fade"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-mg" role="document"><!--modal-dialog-centered-->
+    <div class="modal-content">
+
+      <div class="modal-header" >
+        <!--<ng-container *ngTemplateOutlet="contentModalHeader"></ng-container>-->
+        <h4 class="modal-title pull-left">Imagen del usuario</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeModalFileImage()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <input id="file-input" type="file" (change)="onFileChange($event)" name="file" accept="image/*"/>
+
+          </div>
+          <div class="col-md-6">
+            <img src="{{image}}" id="image-id" class="img-publicacion">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer" style="justify-content: center">
+        <!--<ng-container *ngTemplateOutlet="contentModalFooter"></ng-container>-->
+        <div class="float-center my-1 text-center" style="text-align: center">
+          <button type="button" class="btn btn-success btn-md" (click)="changeImage()">
+            <em class="fa fa-save"></em> Guardar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

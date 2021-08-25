@@ -1,0 +1,37 @@
+
+
+     <section>
+        <div class="contenedor-textos">
+            <span class="cta" (click)="abrirModal('modalc','modal')">
+                <img src="/../../assets/img/corazon.png" alt=""> 
+            </span>
+        </div>
+        <div class="contenedor-textos">
+            <span (click)="abrirModal('modalcontador','modalcon')">{{contarReaccion()}}</span>
+        </div>
+     </section >
+     <div id="modalc" class="modal-container">
+         <div id="modal" class="modal modal-close">
+             <p  class="close" (click)="cerrarModal('modalc','modal')">X</p>
+             <button (click)="reaccionar(1)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/like.png" alt=""></button>
+             <button (click)="reaccionar(2)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/encanta.png" alt=""></button>
+             <button (click)="reaccionar(3)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/risa.png" alt=""></button>
+             <button (click)="reaccionar(4)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/triste.png" alt=""></button>
+             <button (click)="reaccionar(5)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/sorpresa.png" alt=""></button>
+             <button (click)="reaccionar(6)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/serio.png" alt=""></button>
+             <a href="/../../assets/img/corazon.png"></a>
+         </div>
+     </div>
+     <div id="modalcontador" class="modal-container">
+        <div id="modalcon" class="modalr modal-close">
+            <p  class="close" (click)="cerrarModal('modalcontador','modalcon')">X</p>
+            <button (click)="reaccionar(1)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/like.png" alt=""></button>
+            <button (click)="reaccionar(2)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/encanta.png" alt=""></button>
+            <button (click)="reaccionar(3)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/risa.png" alt=""></button>
+            <button (click)="reaccionar(4)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/triste.png" alt=""></button>
+            <button (click)="reaccionar(5)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/sorpresa.png" alt=""></button>
+            <button (click)="reaccionar(6)" (click)="cerrarModal('modalc','modal')" ><img src="/../../assets/img/serio.png" alt=""></button>
+            <a class="texto">carga de usuarios</a>
+        </div>
+    </div>
+     

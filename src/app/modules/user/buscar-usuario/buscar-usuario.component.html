@@ -1,0 +1,13 @@
+<div class="contenedor">
+   <div class="row border-radius">
+    <div class="friend" *ngFor="let usuario of usuarios">
+        <div class="friend_title">
+            <img src="{{usuario.imagen_usuario}}" alt="" />
+            <span>{{usuario.nom_usuario}}<br></span>
+            <button *ngIf="!esAmigo(usuario.id_usuario)" class="delete-friend" style="margin-right: 5%;" (click)="addAmigo(usuario.id_usuario)">+</button>
+        </div>
+    </div>
+</div>
+</div>
+
+

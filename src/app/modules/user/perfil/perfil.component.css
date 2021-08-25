@@ -1,0 +1,157 @@
+/**
+ //.row {
+  width: 100%;
+  margin: 0px auto;
+  display: block;
+  background-color: white;
+  color: #515365;
+  margin-bottom: 20px;
+  border: 1px solid #e6ecf5;
+}
+//.right_row {
+  width: 100%;
+  margin-left: 50%;
+}
+///.feed {
+  width: 100%;
+}
+//
+.feed_title img {
+  height: 40px;
+  width: 40px;
+  border-radius: 200px;
+  margin: 0px 10px;
+}
+.feed_title span {
+  font-size: 0.875rem;
+}
+.feed_title span a {
+  color: #ff5e3a;
+}
+.feed_title a b {
+  color: #3f4257;
+}
+.feed_title a b:hover {
+  color: #ff5e3a;
+}
+.feed_title span p {
+  font-size: 0.675rem;
+}
+.feed_content_image {
+  width: 95%;
+  margin: 10px auto;
+  display: block;
+}
+.feed_content_image img {
+  width: 100%;
+}
+.feed_content_image iframe {
+  width: 100%;
+  height: 300px;
+}
+.feed_content_image p {
+  padding: 10px;
+  padding-top: 5px;
+}
+.feed_footer {
+  height: 50px;
+  border-top: 1px solid #e6ecf5;
+  display: flex;
+}
+.feed_footer_left {
+  width: 55%;
+  margin-left: 20px;
+}
+.feed_footer_left li {
+  height: 50px;
+  display: inline-block;
+  line-height: 2.5;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 3;
+  text-align: center;
+  margin-left: 10px;
+}
+.feed_footer_left li span {
+  font-size: 10px;
+}
+.feed_footer_left li i {
+  font-size: 16px;
+}
+.feed_footer_right {
+  width: 40%;
+  text-align: right;
+}
+.feed_footer_right li {
+  display: inline-block;
+  line-height: 0;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  margin-right: 10px;
+  line-height: 3.5;
+}
+.feed_footer_right li i {
+  font-size: 16px;
+  padding-right: 5px;
+}
+.border-radius {
+  border-radius: 6px;
+}
+.settings {
+  width: 100%;
+  border-bottom: 5px solid #ff5e3a;
+}
+.settings_title {
+  padding: 20px;
+  border-bottom: 1px solid #e6ecf5;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.settings_title h3 {
+  font-size: 0.875rem;
+}
+.settings_content {
+  width: 100%;
+}
+.settings_content ul {
+}
+.settings_content ul li {
+  border-bottom: 1px solid #e6ecf5;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.settings_content ul li p {
+  font-size: 12px;
+  color: #515365;
+  width: 76%;
+  padding: 20px;
+}
+.settings_content ul li p b {
+  font-size: 14px;
+  color: #515365;
+}
+.settings_content ul li p b {
+  font-size: 14px;
+  color: #515365;
+}
+
+@media screen and (max-width: 1200px) {
+  .right_row {
+    width: 100%;
+    margin: 0px auto;
+  }
+}
+*/
+
+
+/*
+.feed_title {
+    padding: 20px;
+    border-bottom: 1px solid #e6ecf5;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}*/

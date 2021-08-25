@@ -1,0 +1,53 @@
+<div class="right_row">
+  <div class="row border-radius">
+      <div class="settings shadow">
+          <div class="settings_title">
+              <h3>Información Personal</h3>
+          </div>
+          <div class="settings_content">
+              <form>
+                  <div class="pi-input pi-input-lg">
+                      <span>Nombre</span>
+                      <input type="text" name="nombres" [(ngModel)]="usuario.nombres_user" />
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Apellido</span>
+                      <input type="text" name="apellidos" [(ngModel)]="usuario.apellidos_user" />
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                    <span>Nombre de Usuario</span>
+                    <input type="text" name="username" [(ngModel)]="usuario.nom_usuario" />
+                </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Email</span>
+                      <input type="text" name="email" [(ngModel)]="usuario.email_user" />
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Cumpleaños</span>
+                      <input type="date" name="fecha" [(ngModel)]="usuario.fecha_nac" />
+                  </div>
+                  <div class="pi-input pi-input-lg">
+                    <span>Telefono/Celular</span>
+                    <input type="text" name="telefono" [(ngModel)]="usuario.telefono" />
+                </div>
+                  <div class="pi-input pi-input-lg">
+                      <span>Género</span>
+                      <select class="form-control" name="genero" id="" [(ngModel)]="usuario.id_genero">
+                        <option *ngFor="let genero of generos"  [value]="genero.id_genero">{{genero.nombre_genero}}</option>
+                      </select>
+                  </div>
+                  <div class="pi-input pi-input-lgg">
+                      <span>Presentación</span>
+                      <input type="text"[(ngModel)]="usuario.presentacion" name="presentacion"/>
+                  </div>
+
+                  <button (click)="actualizarUsuario()">Guardar Cambios</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="suggestions_row">
+  <app-menu-configuracion></app-menu-configuracion>
+</div>
+

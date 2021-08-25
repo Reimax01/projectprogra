@@ -1,0 +1,38 @@
+<div class="row border-radius">
+  <div class="feed">
+      <div class="feed_title">
+          <img src="/../../assets//../../assets/images/user-7.jpg" alt="" />
+          <span><b>{{publicacion.nom_usuario}}</b> compartio <a [routerLink]="['/home/publicacion',publicacion.id_pub]">{{publicacion.cont_type}}</a><br><p>{{formato(publicacion.fecha_bub)}}</p></span>
+      </div>
+      <div class="feed_content">
+          <div class="feed_content_image">
+                <img src="{{publicacion.contenido_pub}}" alt="" *ngIf="publicacion.id_type == 1" />
+                <video  *ngIf="publicacion.id_type == 2" muted controls >
+                  <source src="{{publicacion.contenido_pub}}">
+                </video>
+          </div>
+      </div>
+      <div class="feed_footer">
+          <ul class="feed_footer_left">
+              <li class="hover-orange selected-orange"><img src="/../../assets/img/corazon.png" alt=""> 22k</li>
+              <li><span><b>Jimmy, Andrea</b> and 47 more liked this</span></li>
+          </ul>
+          <ul class="feed_footer_right">
+              <li>
+                  <li class="hover-orange selected-orange"><img src="/../../assets/img/share.png" alt=""> 7k</li>
+                 <li><a href="feed.html" style="color:#515365;"><li class="hover-orange"><img src="/../../assets/img/coment.png" alt="">{{contarComentario(publicacion.id_pub)}}</li></a>
+              </li>
+          </ul>
+      </div>
+      <div class="comentarios">
+        <p>{{accion_comentario}}</p>
+        <div *ngFor="let comentario of comentarios">
+          <p *ngIf="comentario.id_pub == publicacion.id_pub">
+            <span class="usuario">{{comentario.nom_usuario}}</span>{{comentario.contenido_com}}
+           <!-- <span class="fecha">{{formato(comentario.fecha_hora_com)}}</span>-->
+          </p>
+        </div>
+        <textarea class="texto_comentario" name="" id="" cols="30" rows="1" placeholder="Escribe tu comentario ..." (keypress)="notificarComentario()" (change)="comentar(publicacion.id_pub)" [(ngModel)]="comentario.contenido_com"></textarea>
+      </div>
+  </div>
+</div>

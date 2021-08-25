@@ -1,0 +1,115 @@
+.contenedor{
+  margin-left: 21%;
+}
+
+.barra_lateral {
+  border: solid black 1px;
+  float: left;
+  margin-right: 2%;
+
+}
+.titulo-registro{
+  font-size: 1.5rem;
+  text-align: center;;
+}
+.contenido {
+  width: 250%;
+  margin-left: 130%;
+  height: 400%;
+  border: solid black 1px;
+}
+.titulo-registro,
+.titulo-vistap {
+  background: #3f4257;
+  color: white;
+}
+.titulo-vistap {
+  text-align: center;
+
+}
+.contenido-form {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.contvistap {
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 3%;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #003;
+  border-right-color: #003;
+  border-bottom-color: #003;
+  border-left-color: #003;
+}
+.form-control {
+	margin:0.5%;
+}
+.etiqueta {
+	margin:1%;
+	display: block;
+	font-weight: bold;
+}
+.desc {
+  padding-left: 2%;
+  text-align: justify;
+}
+.titulovistpre,.precio{
+  padding-left: 2%;
+}
+
+.imagen-pro {
+  margin-left: 37%;
+  margin-right: 30%;
+}
+.desc{
+  padding-right: 2%;
+}
+.btncomp{
+  border-radius: 3px;
+	background: #0B173B;
+	border: 1px solid #e6ecf5;
+	text-align: center;
+	color: white;
+	margin-left: 41%;
+	margin-right: 35%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 30px;
+	font-size: 1.2rem;
+}
+.btncat,.btntienda{
+  border-radius: 3px;
+	background: #0B173B;
+	border: 1px solid #e6ecf5;
+	text-align: center;
+	color: white;
+	margin-left: 2%;
+	margin-right: 15%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 30px;
+	font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    display: none;
+  }
+  .barra_lateral {
+    width: 100%;
+    border: none;
+    margin-left:-29%;
+    height: 1285px;
+  }
+  .titulo-registro {
+    text-align: center;
+    width: 130%;
+
+  }
+
+}

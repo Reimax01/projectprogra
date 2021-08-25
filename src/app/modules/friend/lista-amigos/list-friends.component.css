@@ -1,0 +1,75 @@
+.contenedor {
+  width: 100%;
+}
+.titulo{
+  text-align: center;
+  width: 100%;
+}
+.row {
+  width: 900px;
+  margin-left: 5%;
+  display: block;
+  background-color: white;
+  color: #515365;
+  margin-bottom: 20px;
+  border: 1px solid #e6ecf5;
+}
+/* FRIENDS PAGE */
+.friend {
+  width: 100%;
+}
+.friend_title {
+  padding: 20px;
+  border-bottom: 1px solid #e6ecf5;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.friend_title img {
+  height: 40px;
+  width: 40px;
+  border-radius: 200px;
+  margin: 0px 10px;
+}
+.friend_title span {
+  font-size: 0.875rem;
+  padding-left: 20px;
+  width: 50%;
+}
+.friend_title span b {
+  color: #38a9ff;
+}
+.friend_title span p {
+  font-size: 0.675rem;
+}
+.friend_title button {
+  border: none;
+  color: white;
+  //margin-left: -20px;
+  cursor: pointer;
+  border-radius: 3px;
+  //width: 70px;
+  height: 30px;
+}
+.add-friend {
+  background-color: #38a9ff;
+}
+.delete-friend {
+  background-color: #ff5e3a;
+}
+/* Personalizado */
+.border-radius {
+  border-radius: 6px;
+}
+.border-radius-image {
+  border-radius: 200px;
+}
+.hover-orange:hover {
+  color: #ff5e3a;
+}
+.selected-orange {
+  color: #ff5e3a;
+}
+.shadow {
+  box-shadow: 3px 4px 5px rgba(209, 209, 209, 0.5);
+}
